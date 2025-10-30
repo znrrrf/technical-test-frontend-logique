@@ -1,42 +1,43 @@
-const cards = [
+// ===== DATA =====
+const serviceCards = [
   {
     img: "./assets/grid1.svg",
-    alt: "grid1",
+    alt: "App Redesign Project",
     title: "App Redesign",
     date: "App Design - June 20, 2022",
     desc: "By information about design the world to the best instructors, heatc helping By information about design the world to the best instructors, heatc helping",
   },
   {
     img: "./assets/grid2.svg",
-    alt: "grid2",
+    alt: "Channel Website Redesign",
     title: "Redesign channel website landng page",
     date: "App Design - June 20, 2022",
     desc: "By information about design the world to the best instructors, heatc helping By information about design the world to the best instructors, heatc helping",
   },
   {
     img: "./assets/grid3.svg",
-    alt: "grid3",
+    alt: "Locator App",
     title: "New Locator App For a New Company",
     date: "App Design - June 20, 2022",
     desc: "By information about design the world to the best instructors, heatc helping By information about design the world to the best instructors, heatc helping",
   },
   {
     img: "./assets/grid4.svg",
-    alt: "grid4",
+    alt: "Rental Platform",
     title: "Rental Rooms Web App Platform",
     date: "App Design - June 20, 2022",
     desc: "By information about design the world to the best instructors, heatc helping By information about design the world to the best instructors, heatc helping",
   },
   {
     img: "./assets/grid5.svg",
-    alt: "grid5",
+    alt: "Calendar App",
     title: "Calendar App for Big SASS Company",
     date: "App Design - June 20, 2022",
     desc: "By information about design the world to the best instructors, heatc helping By information about design the world to the best instructors, heatc helping",
   },
 ];
 
-let users = [
+let testimonialUsers = [
   {
     name: "Alicia Tan",
     job: "UI/UX Designer",
@@ -74,86 +75,120 @@ let users = [
   },
 ];
 
-$(document).ready(function () {
-  // SERVICE LOGIC
+// ===== SERVICE CARDS RENDERER =====
+function renderServiceCards() {
   const $serviceList = $(".service-list");
   $serviceList.empty();
 
-  $.each(cards, function (index, card) {
-    const boxClass = `grid-${index + 1}`;
-    let html = `<div class="box ${boxClass}">
-                  <img src="${card.img}" alt="${card.alt}" />`;
+  serviceCards.forEach((card, index) => {
+    const cardClass = `grid-${index + 1}`;
+    const isMainCard = index === 0;
 
-    if (card.title && index + 1 === 1) {
-      html += `<p>${card.date}</p>
-               <a href="#">${card.title}</a>
-               <p class="desc">${card.desc}</p>`;
-    } else if (card.title) {
-      html += `<p>${card.date}</p>
-               <a href="#" class="small">${card.title}</a>`;
+    const cardHTML = `
+      <div class="box ${cardClass}">
+        <img src="${card.img}" alt="${card.alt}" />
+        <p>${card.date}</p>
+        <a href="#" class="${isMainCard ? "" : "small"}">${card.title}</a>
+        ${isMainCard ? `<p class="desc">${card.desc}</p>` : ""}
+      </div>
+    `;
+
+    $serviceList.append(cardHTML);
+  });
+}
+
+// ===== TESTIMONIAL FUNCTIONALITY =====
+const TestimonialManager = {
+  $avatarList: $("#avatar-list"),
+  $testimonialText: $("#testimonial-text"),
+  $mainName: $("#main-name"),
+  $mainJob: $("#main-job"),
+
+  init() {
+    this.renderAvatars();
+    this.updateMainUser(this.getCenterUser());
+    this.attachEventListeners();
+  },
+
+  getCenterUser() {
+    const centerIndex = Math.floor(testimonialUsers.length / 2);
+    return testimonialUsers[centerIndex];
+  },
+
+  renderAvatars() {
+    this.$avatarList.empty();
+
+    testimonialUsers.forEach((user, index) => {
+      const avatarThumb = $(`
+        <div class="avatar-thumb avatar-thumb${
+          index + 1
+        }" data-index="${index}">
+          <img src="${user.img}" alt="${user.name}">
+        </div>
+      `);
+      this.$avatarList.append(avatarThumb);
+    });
+
+    const centerIndex = Math.floor(testimonialUsers.length / 2);
+    $(".avatar-thumb").eq(centerIndex).addClass("active");
+  },
+
+  updateMainUser(user) {
+    const fadeSpeed = 200;
+
+    this.$mainName.fadeOut(fadeSpeed, function () {
+      $(this).text(user.name).fadeIn(fadeSpeed);
+    });
+
+    this.$mainJob.fadeOut(fadeSpeed, function () {
+      $(this).text(user.job).fadeIn(fadeSpeed);
+    });
+
+    this.$testimonialText.fadeOut(fadeSpeed, function () {
+      $(this).text(user.testimonial).fadeIn(fadeSpeed);
+    });
+  },
+
+  rotateUsers(clickedIndex) {
+    const centerIndex = Math.floor(testimonialUsers.length / 2);
+    const rotateBy = clickedIndex - centerIndex;
+
+    if (rotateBy === 0) return;
+
+    // Rotate array to bring clicked user to center
+    if (rotateBy > 0) {
+      // Rotate right
+      for (let i = 0; i < rotateBy; i++) {
+        const firstUser = testimonialUsers.shift();
+        testimonialUsers.push(firstUser);
+      }
+    } else {
+      // Rotate left
+      for (let i = 0; i < Math.abs(rotateBy); i++) {
+        const lastUser = testimonialUsers.pop();
+        testimonialUsers.unshift(lastUser);
+      }
     }
+  },
 
-    html += `</div>`;
-    $serviceList.append(html);
-  });
+  attachEventListeners() {
+    this.$avatarList.on("click", ".avatar-thumb", (e) => {
+      const clickedIndex = $(e.currentTarget).data("index");
 
-  // TESTIMONIAL LOGIC
-  const $avatarList = $("#avatar-list");
-
-  function renderAvatars() {
-    $avatarList.empty();
-    users.forEach((user, index) => {
-      const thumb = $(`
-          <div class="avatar-thumb avatar-thumb${
-            index + 1
-          }" data-index="${index}">
-            <img src="${user.img}" alt="${user.name}">
-          </div>
-        `);
-      $avatarList.append(thumb);
+      this.rotateUsers(clickedIndex);
+      this.renderAvatars();
+      this.updateMainUser(this.getCenterUser());
     });
+  },
+};
 
-    // const sizes = [50, 67, 86, 67, 50];
-    // $(".avatar-thumb").each(function (i) {
-    //   $(this).css({
-    //     width: sizes[i] + "px",
-    //     height: sizes[i] + "px",
-    //   });
-    // });
+// ===== INITIALIZE EVERYTHING =====
+$(document).ready(function () {
+  renderServiceCards();
 
-    const middleIndex = Math.floor(users.length / 2);
-    $(".avatar-thumb").eq(middleIndex).addClass("active");
-  }
+  TestimonialManager.init();
 
-  function updateMainUser(user) {
-    $("#main-name").fadeOut(150, function () {
-      $(this).text(user.name).fadeIn(150);
-    });
-    $("#main-job").fadeOut(150, function () {
-      $(this).text(user.job).fadeIn(150);
-    });
-    $("#testimonial-text").fadeOut(200, function () {
-      $(this).text(user.testimonial).fadeIn(200);
-    });
-  }
+  initFormHandler();
 
-  function rotateUsers(clickedIndex) {
-    const startIndex = (clickedIndex - 2 + users.length) % users.length;
-    users = users.slice(startIndex).concat(users.slice(0, startIndex));
-  }
-
-  renderAvatars();
-
-  const middleUser = users[Math.floor(users.length / 2)];
-  updateMainUser(middleUser);
-
-  $avatarList.on("click", ".avatar-thumb", function () {
-    const index = $(this).data("index");
-
-    rotateUsers(index);
-    renderAvatars();
-
-    const middleUser = users[Math.floor(users.length / 2)];
-    updateMainUser(middleUser);
-  });
+  $("body").css("opacity", "0").animate({ opacity: 1 }, 500);
 });

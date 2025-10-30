@@ -6,33 +6,30 @@
     <title>Technical Test - Frontend Developer</title>
     <link rel="stylesheet" href="styles.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
     <!-- NAVBAR -->
     <header>
-      <div class="navbar">
+      <nav class="navbar">
         <div class="logo">
           <a href="index.html">
             <img src="assets/logo_power.png" alt="Power Logo" />
           </a>
         </div>
-        <nav class="menu">
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
+        <ul class="menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <div class="main-container">
-      <!-- HERO -->
+    <main class="main-container">
+      <!-- HERO SECTION -->
       <section id="home" class="hero">
         <div class="hero-text">
           <h1 class="hero-title">
@@ -44,15 +41,12 @@
             business goals. we provide a high-quality services.
           </p>
           <div class="hero-button">
-            <button class="btn contact">Contact Us</button>
-            <div class="btn watch">
-              <button>
-                <img src="assets/button_play.png" alt="Button Play" />
+            <button class="btn btn-contact">Contact Us</button>
+            <div class="btn btn-watch">
+              <button class="play-button">
+                <img src="assets/button_play.png" alt="Play Button" />
               </button>
-              <span
-                >Watch our <br />
-                introduction video</span
-              >
+              <span>Watch our <br />introduction video</span>
             </div>
           </div>
         </div>
@@ -61,14 +55,14 @@
         </div>
       </section>
 
-      <!-- PARTNER LOGOS -->
+      <!-- PARTNERS SECTION -->
       <section class="partners">
         <p>Trusted by Global Companies</p>
         <div class="logos">
           <img src="./assets/google.png" alt="Google" />
-          <img src="./assets/airbnb.png" alt="airbnb" />
-          <img src="./assets/creative.png" alt="creative" />
-          <img src="./assets/shpify.png" alt="shpify" />
+          <img src="./assets/airbnb.png" alt="Airbnb" />
+          <img src="./assets/creative.png" alt="Creative" />
+          <img src="./assets/shpify.png" alt="Shopify" />
           <img src="./assets/airbnb.png" alt="Amazon" />
         </div>
       </section>
@@ -80,37 +74,29 @@
           By information about design the world to the best instructors, heatc
           helping By information
         </p>
-
         <div class="service-list"></div>
       </section>
 
-      <!-- TESTIMONIAL -->
+      <!-- TESTIMONIAL SECTION -->
       <section class="testimonial">
-        <img class="many-dot" src="./assets/many_dot.svg" alt="many dot" />
-        <img class="many-dot2" src="./assets/many_dot.svg" alt="many dot" />
-
-        <h1>
-          Let’s Hear <br />
-          What They Say
-        </h1>
-
+        <img class="many-dot" src="./assets/many_dot.svg" alt="Decoration" />
+        <img class="many-dot2" src="./assets/many_dot.svg" alt="Decoration" />
+        <h1>Let's Hear <br />What They Say</h1>
         <div class="testimonial-text-container">
-          <img src="./assets/kutip_kiri.svg" alt="kutip kiri" />
+          <img src="./assets/kutip_kiri.svg" alt="Quote Left" />
           <p id="testimonial-text"></p>
-          <img src="./assets/kutip_kanan.svg" alt="kutip kanan" />
+          <img src="./assets/kutip_kanan.svg" alt="Quote Right" />
         </div>
-
         <div class="avatar-container">
           <div id="avatar-list"></div>
         </div>
-
         <div class="user-info">
           <h3 id="main-name">Alicia Tan</h3>
           <p id="main-job">UI/UX Designer</p>
         </div>
       </section>
 
-      <!-- HELP -->
+      <!-- HELP SECTION -->
       <section id="about" class="help-section">
         <div class="container">
           <div class="left">
@@ -122,43 +108,42 @@
             <form class="subscribe-form">
               <div class="input-group">
                 <span class="icon">
-                  <img src="./assets/email.svg" alt="email" />
+                  <img src="./assets/email.svg" alt="Email Icon" />
                 </span>
                 <input
                   type="email"
                   placeholder="Enter your email address"
                   required
                 />
-                <button type="submit">Subscribe</button>
               </div>
+              <button type="submit">Subscribe</button>
             </form>
           </div>
-
           <div class="right">
             <div class="service-card">
               <div class="service-icon">
-                <img src="./assets/uiux.svg" alt="uiux" />
+                <img src="./assets/uiux.svg" alt="UI/UX" />
               </div>
               <h4>UI/UX Design</h4>
               <p>Sometimes features require a short description</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <img src="./assets/logo_branding.svg" alt="logo branding" />
+                <img src="./assets/logo_branding.svg" alt="Logo Branding" />
               </div>
               <h4>Logo Branding</h4>
               <p>Sometimes features require a short description</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <img src="./assets/app_design.svg" alt="app design" />
+                <img src="./assets/app_design.svg" alt="App Design" />
               </div>
               <h4>App Design</h4>
               <p>Sometimes features require a short description</p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <img src="./assets/website_design.svg" alt="website design" />
+                <img src="./assets/website_design.svg" alt="Website Design" />
               </div>
               <h4>Website Design</h4>
               <p>Sometimes features require a short description</p>
@@ -167,11 +152,12 @@
         </div>
       </section>
 
+      <!-- FOOTER -->
       <footer id="contact" class="footer">
         <div class="footer-container">
           <div class="footer-top">
             <div class="footer-logo">
-              <img src="assets/logo_power_white.svg" alt="Power Logo white" />
+              <img src="assets/logo_power_white.svg" alt="Power Logo" />
             </div>
             <div class="footer-social">
               <a href="#"><img src="./assets/inst.svg" alt="Instagram" /></a>
@@ -181,9 +167,7 @@
               <a href="#"><img src="./assets/inst.svg" alt="Instagram" /></a>
             </div>
           </div>
-
           <hr />
-
           <div class="footer-links-section">
             <h4>Company</h4>
             <div class="footer-links-row">
@@ -198,12 +182,12 @@
               <button class="contact-btn">Contact Us</button>
             </div>
           </div>
-
           <p class="copyright">© Power 2021 - All Rights Reserved</p>
         </div>
       </footer>
-    </div>
+    </main>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
