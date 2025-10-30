@@ -86,11 +86,11 @@ $(document).ready(function () {
 
     if (card.title && index + 1 === 1) {
       html += `<p>${card.date}</p>
-               <h1>${card.title}</h1>
+               <a href="#">${card.title}</a>
                <p class="desc">${card.desc}</p>`;
     } else if (card.title) {
       html += `<p>${card.date}</p>
-               <h1 class="small">${card.title}</h1>`;
+               <a href="#" class="small">${card.title}</a>`;
     }
 
     html += `</div>`;
@@ -104,20 +104,22 @@ $(document).ready(function () {
     $avatarList.empty();
     users.forEach((user, index) => {
       const thumb = $(`
-          <div class="avatar-thumb" data-index="${index}">
+          <div class="avatar-thumb avatar-thumb${
+            index + 1
+          }" data-index="${index}">
             <img src="${user.img}" alt="${user.name}">
           </div>
         `);
       $avatarList.append(thumb);
     });
 
-    const sizes = [50, 67, 86, 67, 50];
-    $(".avatar-thumb").each(function (i) {
-      $(this).css({
-        width: sizes[i] + "px",
-        height: sizes[i] + "px",
-      });
-    });
+    // const sizes = [50, 67, 86, 67, 50];
+    // $(".avatar-thumb").each(function (i) {
+    //   $(this).css({
+    //     width: sizes[i] + "px",
+    //     height: sizes[i] + "px",
+    //   });
+    // });
 
     const middleIndex = Math.floor(users.length / 2);
     $(".avatar-thumb").eq(middleIndex).addClass("active");
