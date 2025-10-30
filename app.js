@@ -75,6 +75,14 @@ let testimonialUsers = [
   },
 ];
 
+// ===== NAVBAR TOGGLE ====
+function NavigationForMobileInit() {
+  document.querySelector(".menu-toggle").addEventListener("click", () => {
+    console.log("jalan", document.querySelector(".menu"));
+    document.querySelector(".menu").classList.toggle("show");
+  });
+}
+
 // ===== SERVICE CARDS RENDERER =====
 function renderServiceCards() {
   const $serviceList = $(".service-list");
@@ -184,11 +192,11 @@ const TestimonialManager = {
 
 // ===== INITIALIZE EVERYTHING =====
 $(document).ready(function () {
+  NavigationForMobileInit();
+
   renderServiceCards();
 
   TestimonialManager.init();
-
-  initFormHandler();
 
   $("body").css("opacity", "0").animate({ opacity: 1 }, 500);
 });
