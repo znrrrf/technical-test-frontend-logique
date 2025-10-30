@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technical Test - Frontend Developer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="assets/logo_power.png" alt="Power Logo" />
+        </a>
+      </div>
+      <nav class="menu">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="main-container">
+      <!-- HERO -->
+      <section id="home" class="hero">
+        <div class="hero-text">
+          <h1 class="hero-title">
+            We Design Impactful <br />
+            Digital <span class="highlight-box">Products</span>
+          </h1>
+          <p>
+            Help find solutions with intitutive and in accordance with client
+            business goals. we provide a high-quality services.
+          </p>
+          <div class="hero-button">
+            <button class="btn contact">Contact Us</button>
+            <div class="btn watch">
+              <button>
+                <img src="assets/button_play.png" alt="Button Play" />
+              </button>
+              <span
+                >Watch our <br />
+                introduction video</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="./assets/human_right_hero_image.png" alt="Hero Image" />
+        </div>
+      </section>
+
+      <!-- PARTNER LOGOS -->
+      <section class="partners">
+        <p>Trusted by Global Companies</p>
+        <div class="logos">
+          <img src="./assets/google.png" alt="Google" />
+          <img src="./assets/airbnb.png" alt="airbnb" />
+          <img src="./assets/creative.png" alt="creative" />
+          <img src="./assets/shpify.png" alt="shpify" />
+          <img src="./assets/airbnb.png" alt="Amazon" />
+        </div>
+      </section>
+
+      <!-- SERVICES SECTION -->
+      <section id="products" class="services">
+        <h2>We create world-class digital products</h2>
+        <p>
+          By information about design the world to the best instructors, heatc
+          helping By information
+        </p>
+
+        <div class="service-list"></div>
+      </section>
+
+      <!-- TESTIMONIAL -->
+      <section class="testimonial">
+        <img class="many-dot" src="./assets/many_dot.svg" alt="many dot" />
+        <img class="many-dot2" src="./assets/many_dot.svg" alt="many dot" />
+
+        <h1>
+          Let’s Hear <br />
+          What They Say
+        </h1>
+
+        <div class="testimonial-text-container">
+          <img src="./assets/kutip_kiri.svg" alt="kutip kiri" />
+          <p id="testimonial-text"></p>
+          <img src="./assets/kutip_kanan.svg" alt="kutip kanan" />
+        </div>
+
+        <div class="avatar-container">
+          <div id="avatar-list"></div>
+        </div>
+
+        <div class="user-info">
+          <h3 id="main-name">Alicia Tan</h3>
+          <p id="main-job">UI/UX Designer</p>
+        </div>
+      </section>
+
+      <!-- HELP -->
+      <section class="help-section">
+        <div class="container">
+          <div class="left">
+            <h2>How We Can Help You</h2>
+            <p>
+              Follow our newsletter. We will regulary update our latest project
+              and availability.
+            </p>
+            <form class="subscribe-form">
+              <div class="input-group">
+                <span class="icon">
+                  <img src="./assets/email.svg" alt="email" />
+                </span>
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  required
+                />
+                <button type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="right">
+            <div class="service-card">
+              <div class="service-icon">
+                <img src="./assets/uiux.svg" alt="uiux" />
+              </div>
+              <h4>UI/UX Design</h4>
+              <p>Sometimes features require a short description</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <img src="./assets/logo_branding.svg" alt="logo branding" />
+              </div>
+              <h4>Logo Branding</h4>
+              <p>Sometimes features require a short description</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <img src="./assets/app_design.svg" alt="app design" />
+              </div>
+              <h4>App Design</h4>
+              <p>Sometimes features require a short description</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <img src="./assets/website_design.svg" alt="website design" />
+              </div>
+              <h4>Website Design</h4>
+              <p>Sometimes features require a short description</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-top">
+            <div class="footer-logo">
+              <img src="assets/logo_power_white.svg" alt="Power Logo white" />
+            </div>
+            <div class="footer-social">
+              <a href="#"><img src="./assets/inst.svg" alt="Instagram" /></a>
+              <a href="#"><img src="./assets/facebook.svg" alt="Facebook" /></a>
+              <a href="#"><img src="./assets/twitter.svg" alt="Twitter" /></a>
+              <a href="#"><img src="./assets/git.svg" alt="GitHub" /></a>
+              <a href="#"><img src="./assets/inst.svg" alt="Instagram" /></a>
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="footer-links-section">
+            <h4>Company</h4>
+            <div class="footer-links-row">
+              <ul class="footer-links">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Press</a></li>
+                <li><a href="#">Investors</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
+              <button class="contact-btn">Contact Us</button>
+            </div>
+          </div>
+
+          <p class="copyright">© Power 2021 - All Rights Reserved</p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
