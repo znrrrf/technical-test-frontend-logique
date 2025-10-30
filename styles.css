@@ -189,7 +189,8 @@ header {
   left: -12px;
   right: -12px;
   bottom: -8px;
-  background: url("./assets/border_product.png") no-repeat center / contain;
+  background: url("./assets/images/border_product.png") no-repeat center /
+    contain;
   animation: scaleIn 0.6s ease 0.3s backwards;
 }
 
@@ -290,14 +291,10 @@ header {
 
 .partners .logos img {
   width: 109px;
-  opacity: 0.6;
   transition: all 0.3s ease;
-  filter: grayscale(100%);
 }
 
 .partners .logos img:hover {
-  opacity: 1;
-  filter: grayscale(0%);
   transform: scale(1.1);
 }
 

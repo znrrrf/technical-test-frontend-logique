@@ -1,35 +1,35 @@
 // ===== DATA =====
 const serviceCards = [
   {
-    img: "./assets/grid1.svg",
+    img: "./assets/images/grid1.svg",
     alt: "App Redesign Project",
     title: "App Redesign",
     date: "App Design - June 20, 2022",
     desc: "By information about design the world to the best instructors, heatc helping By information about design the world to the best instructors, heatc helping",
   },
   {
-    img: "./assets/grid2.svg",
+    img: "./assets/images/grid2.svg",
     alt: "Channel Website Redesign",
     title: "Redesign channel website landng page",
     date: "App Design - June 20, 2022",
     desc: "By information about design the world to the best instructors, heatc helping By information about design the world to the best instructors, heatc helping",
   },
   {
-    img: "./assets/grid3.svg",
+    img: "./assets/images/grid3.svg",
     alt: "Locator App",
     title: "New Locator App For a New Company",
     date: "App Design - June 20, 2022",
     desc: "By information about design the world to the best instructors, heatc helping By information about design the world to the best instructors, heatc helping",
   },
   {
-    img: "./assets/grid4.svg",
+    img: "./assets/images/grid4.svg",
     alt: "Rental Platform",
     title: "Rental Rooms Web App Platform",
     date: "App Design - June 20, 2022",
     desc: "By information about design the world to the best instructors, heatc helping By information about design the world to the best instructors, heatc helping",
   },
   {
-    img: "./assets/grid5.svg",
+    img: "./assets/images/grid5.svg",
     alt: "Calendar App",
     title: "Calendar App for Big SASS Company",
     date: "App Design - June 20, 2022",
@@ -43,35 +43,35 @@ let testimonialUsers = [
     job: "UI/UX Designer",
     testimonial:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at elit ut sem interdum accumsan in sit amet augue.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at elit ut sem interdum accumsan in sit amet augue.",
-    img: "./assets/avatar1.svg",
+    img: "./assets/images/avatar1.svg",
   },
   {
     name: "James Carter",
     job: "Frontend Developer",
     testimonial:
       "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin ultricies diam in lorem iaculis posuere. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin ultricies diam in lorem iaculis posuere.",
-    img: "./assets/avatar2.svg",
+    img: "./assets/images/avatar2.svg",
   },
   {
     name: "Ricky Aprilia",
     job: "Founder of Varibo",
     testimonial:
       "Vivamus vitae erat a leo volutpat ultricies. Aliquam eget sapien eget ligula facilisis feugiat ac a justo. Vivamus vitae erat a leo volutpat ultricies. Aliquam eget sapien eget ligula facilisis feugiat ac a justo.",
-    img: "./assets/avatar3.svg",
+    img: "./assets/images/avatar3.svg",
   },
   {
     name: "Ravi Santoso",
     job: "Software Engineer",
     testimonial:
       "Nullam vel dolor in sapien varius faucibus. In hac habitasse platea dictumst. Donec ac lorem ut justo suscipit euismod. Nullam vel dolor in sapien varius faucibus. In hac habitasse platea dictumst. Donec ac lorem ut justo suscipit euismod.",
-    img: "./assets/avatar4.svg",
+    img: "./assets/images/avatar4.svg",
   },
   {
     name: "Dina Prameswari",
     job: "Marketing Lead",
     testimonial:
       "Curabitur commodo justo a sapien accumsan, ut tristique enim tempus. Cras vel risus non lorem sagittis eleifend. Curabitur commodo justo a sapien accumsan, ut tristique enim tempus. Cras vel risus non lorem sagittis eleifend.",
-    img: "./assets/avatar5.svg",
+    img: "./assets/images/avatar5.svg",
   },
 ];
 
